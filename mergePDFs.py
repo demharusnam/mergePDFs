@@ -42,10 +42,11 @@ def main():
 		print(USAGE)
 		exit(1)
 	else:
-		files = [f.strip() for f in argv[1:len(argv)-1]]
-
 		if '.pdf' not in argv[len(argv)-1]:
 			output = argv[len(argv)-1].strip() + '.pdf'
+			files = [f.strip() for f in argv[1:len(argv)-1]]
+		else:
+			files = [f.strip() for f in argv[1:len(argv)]]
 
 	merger = PdfFileMerger()
 
